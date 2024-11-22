@@ -1,0 +1,56 @@
+{
+    /*  width и height элементов включают в
+        себя значения полей и границ  */
+    box-sizing: border-box;
+}
+.grid-init {
+    max-width: 800px; /* максимальная ширина контейнера */
+    margin: auto; /* центрирование контейнера на странице */
+    background-color: rgba(189, 123, 233, 0.527); /* фон */ 
+    padding: 30px; /* внутренние отступы */
+}
+.box-init {
+    font-size: larger; /* размер шрифта */
+    color: #f00707; /* цвет текста */ 
+    border-radius: 5px; /* скругление углов */
+    background-color: #3e75eb; /* цвет фона */
+    border: 3px solid rgb(65, 6, 83); /* граница блока */ 
+    padding: 10px; /* внутренние отступы */
+    /*  выравнивание текста по центру блока
+        с помощью CSS Flexbox  */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-areas:
+        "my-nav my-header my-header"
+        "my-nav my-main my-aside"
+        "my-nav my-section my-aside"
+        "my-nav my-footer my-footer";
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+
+.l-header {
+    grid-area: my-header;
+}
+.l-nav {
+    grid-area: my-nav;
+}
+.l-main {
+    grid-area: my-main;
+}
+.l-aside {
+    grid-area: my-aside;
+}
+.l-section {
+    grid-area: my-section;
+}
+.l-footer {
+    grid-area: my-footer;
+}
